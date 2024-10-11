@@ -1,6 +1,5 @@
 import { model, Schema } from 'mongoose';
 import argon from 'argon2';
-import { required } from 'joi';
 
 const UserSchema = new Schema(
   {

@@ -1,7 +1,11 @@
 import Joi from 'joi';
 
-export const createPostValidation = Joi.object({
-  title: Joi.string().min(3).required(),
-  body: Joi.string().min(10).required(),
+const createPostValidation = Joi.object({
+  title: Joi.string().min(1).required(),
+  body: Joi.string().min(1).required(),
   tags: Joi.array().items(Joi.string()).optional(),
+  imageUrl: Joi.string().uri().optional(),
+  userId: joi.string().required(),
 });
+
+export default createPostValidation;
