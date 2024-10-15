@@ -1,4 +1,4 @@
-import { server } from './boot/server.js';
+import { server } from './boot/server.js'
 import appConfig from './config/appConfig.js';
 import { initializeDatabaseConnection } from './config/dbConfig.js';
 

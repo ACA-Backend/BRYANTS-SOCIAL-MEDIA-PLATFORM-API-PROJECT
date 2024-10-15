@@ -1,4 +1,4 @@
-import { verifyToken } from '../providers/jwtProvider.js';
+import { verifyToken } from '../providers/jwtProvider.js'
 import { UnauthenticatedError } from '../../lib/errorDefinitions.js';
 import { User } from '../schema/userSchema.js';
 

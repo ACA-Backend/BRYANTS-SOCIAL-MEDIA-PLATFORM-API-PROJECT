@@ -1,4 +1,4 @@
-import express from 'express';
+import express from 'express'
 import { createPost, updatePost, deletePost, getPost } from '../app/controllers/postController.js';
 import createPostValidation from '../app/requests/postValidation.js';
 import asyncHandler from '../lib/asyncHandler.js';

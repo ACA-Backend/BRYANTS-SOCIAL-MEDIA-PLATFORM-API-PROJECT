@@ -1,4 +1,4 @@
-import { NotFoundError, ConflictError, BadRequestError } from '../../lib/errorDefinitions.js';
+import { NotFoundError, ConflictError, BadRequestError } from '../../lib/errorDefinitions.js'
 import { Post } from '../schema/postSchema.js';
 import { Like } from '../schema/likeSchema.js';
 

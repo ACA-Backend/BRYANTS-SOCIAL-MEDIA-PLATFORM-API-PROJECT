@@ -1,6 +1,6 @@
 import asyncHandler from "../../lib/asyncHandler.js";
 import { BadRequestError, NotFoundError } from "../../lib/errorDefinitions.js";
-import * as notificationService from "../services/notificationService.js";
+import * as notificationService from "../services/notificationService.js"
 
 /**
  * Create a new notification for a user.

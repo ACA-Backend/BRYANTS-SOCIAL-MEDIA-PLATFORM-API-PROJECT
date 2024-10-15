@@ -1,4 +1,4 @@
-import asyncHandler from '../../lib/asyncHandler.js';
+import asyncHandler from '../../lib/asyncHandler.js'
 import { BadRequestError, NotFoundError, ForbiddenError } from '../../lib/errorDefinitions.js';
 import * as messageService from '../services/messageService.js';
 

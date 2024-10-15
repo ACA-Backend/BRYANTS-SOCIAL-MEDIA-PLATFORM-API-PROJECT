@@ -1,4 +1,4 @@
-import { Message } from '../schema/messageSchema.js'; 
+import { Message } from '../schema/messageSchema.js'
 
 // Creating a new message
 export const createMessage = async (senderId, recipientId, content) => {

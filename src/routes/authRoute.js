@@ -1,4 +1,4 @@
-import express from 'express';
+import express from 'express'
 import { signUp, login } from '../app/controllers/authController.js';
 import asyncHandler from '../lib/asyncHandler.js';
 import { validate } from '../lib/inputValidator.js';

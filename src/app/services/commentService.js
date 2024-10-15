@@ -1,4 +1,4 @@
-import { NotFoundError } from '../../lib/errorDefinitions.js';
+import { NotFoundError } from '../../lib/errorDefinitions.js'
 import { Comment } from '../schema/commentSchema.js'; 
 
 // Create a new comment

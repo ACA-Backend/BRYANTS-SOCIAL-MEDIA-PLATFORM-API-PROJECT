@@ -1,4 +1,4 @@
-import asyncHandler from "../../lib/asyncHandler.js";
+import asyncHandler from "../../lib/asyncHandler.js"
 import * as userService from "../services/userService.js";
 import { NotFoundError } from "../../lib/errorDefinitions.js";
 

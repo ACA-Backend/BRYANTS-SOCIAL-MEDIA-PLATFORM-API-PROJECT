@@ -1,4 +1,4 @@
-import { User } from "../schema/userSchema.js"; 
+import { User } from "../schema/userSchema.js" 
 import { NotFoundError, UnauthenticatedError } from '../../lib/errorDefinition.js';
 import { generateToken } from '../providers/jwtProvider.js'; 
 import * as authService from './authService.js'; 

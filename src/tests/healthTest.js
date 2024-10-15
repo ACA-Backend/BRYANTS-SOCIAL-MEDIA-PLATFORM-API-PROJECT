@@ -1,4 +1,4 @@
-import request from 'supertest';
+import request from 'supertest'
 import { app } from '../boot/server.js'; 
 
 describe('test that the server is up', () => {

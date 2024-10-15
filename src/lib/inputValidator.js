@@ -16,4 +16,4 @@ const validator = ( schema, request ) =>
      };
     
     
-    export default validator;
+    export default validator
