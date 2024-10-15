@@ -1,5 +1,5 @@
 import asyncHandler from "../../lib/asyncHandler.js";
-import { BadRequestError, NotFoundError } from "../../lib/error-definitions.js";
+import { BadRequestError, NotFoundError } from "../../lib/errorDefinitions.js";
 import * as commentService from "../services/commentService.js";
 import validator from "../../lib/inputValidator.js";
 import { createCommentRequest } from "../requests/createCommentRequest.js";

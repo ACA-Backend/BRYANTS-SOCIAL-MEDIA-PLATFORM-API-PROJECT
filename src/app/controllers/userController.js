@@ -4,8 +4,8 @@ import { NotFoundError } from "../../lib/errorDefinitions.js";
 
 // Fetch user profile by ID
 export const getUserProfile = asyncHandler(async (req, res) => {
-    const { id } = req.params; // Get user ID from request parameters
-    const user = await userService.getUserById(id); // Fetch user by ID
+    const { id } = req.params; 
+    const user = await userService.getUserById(id); 
 
     if (!user) {
         throw new NotFoundError("User not found");
@@ -28,8 +28,8 @@ export const getUserProfile = asyncHandler(async (req, res) => {
 
 // Update user information
 export const updateUserProfile = asyncHandler(async (req, res) => {
-    const { id } = req.params; // Get user ID from request parameters
-    const updatedUser = await userService.updateUser(id, req.body); // Update user information
+    const { id } = req.params; 
+    const updatedUser = await userService.updateUser(id, req.body); 
 
     if (!updatedUser) {
         throw new NotFoundError("User not found");
@@ -50,10 +50,10 @@ export const updateUserProfile = asyncHandler(async (req, res) => {
 
 // Follow a user
 export const followUser = asyncHandler(async (req, res) => {
-    const { id } = req.params; // User to follow
-    const loggedInUserId = req.user._id; // Get logged-in user's ID
+    const { id } = req.params; 
+    const loggedInUserId = req.user._id; 
 
-    const updatedUser = await userService.followUser(loggedInUserId, id); // Follow the user
+    const updatedUser = await userService.followUser(loggedInUserId, id); 
 
     return res.json({
         success: true,
@@ -70,10 +70,10 @@ export const followUser = asyncHandler(async (req, res) => {
 
 // Unfollow a user
 export const unfollowUser = asyncHandler(async (req, res) => {
-    const { id } = req.params; // User to unfollow
-    const loggedInUserId = req.user._id; // Get logged-in user's ID
+    const { id } = req.params;
+    const loggedInUserId = req.user._id; 
 
-    const updatedUser = await userService.unfollowUser(loggedInUserId, id); // Unfollow the user
+    const updatedUser = await userService.unfollowUser(loggedInUserId, id); 
 
     return res.json({
         success: true,

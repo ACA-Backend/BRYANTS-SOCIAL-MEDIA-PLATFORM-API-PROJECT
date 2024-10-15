@@ -5,7 +5,7 @@ import * as messageService from '../services/messageService.js';
 // Sending a message to another user
 export const sendMessage = asyncHandler(async (req, res) => {
   const { recipientId, content } = req.body;
-  const senderId = req.user._id; // Assuming req.user is populated by authMiddleware
+  const senderId = req.user._id; 
 
   if (!recipientId || !content) {
     throw new BadRequestError('Recipient ID and message content are required');

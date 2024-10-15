@@ -5,7 +5,7 @@ export const createPost = async (req, res, next) => {
   try {
     const { content } = req.body;
     const post = new Post({
-      user: req.user.id,  // Assuming `req.user` contains authenticated user info
+      user: req.user.id,  
       content
     });
     await post.save();
