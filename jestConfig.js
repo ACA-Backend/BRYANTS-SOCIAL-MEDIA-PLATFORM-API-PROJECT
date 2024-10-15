@@ -20,7 +20,7 @@ const config = {
   //this will ignore node_modules directory
   testPathIgnorePatterns: ["/node_modules/"],
 
-  //code to enable verbose test output
+  //code to enable verbose( or more detailed ) test output.
   verbose: true
 };
 

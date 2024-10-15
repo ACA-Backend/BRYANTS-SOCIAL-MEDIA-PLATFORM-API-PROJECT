@@ -1,11 +1,11 @@
-import { NotFoundError, ConflictError, BadRequestError } from '../../lib/error-definitions.js';
-import { Post } from '../schema/post.schema.js';
-import { Like } from '../schema/like.schema.js';
+import { NotFoundError, ConflictError, BadRequestError } from '../../lib/errorDefinitions.js';
+import { Post } from '../schema/postSchema.js';
+import { Like } from '../schema/likeSchema.js';
 
 /**
  * Like a post.
- * @param {ObjectId} userId - The ID of the user who is liking the post.
- * @param {ObjectId} postId - The ID of the post to like.
+ * @param {ObjectId} userId -this is the ID of the user who is liking the post.
+ * @param {ObjectId} postId -this is the ID of the post to like.
  * @returns {Object} - The liked post data.
  */
 export const likePost = async (userId, postId) => {
@@ -28,7 +28,7 @@ export const likePost = async (userId, postId) => {
 };
 
 /**
- * Unlike a post.
+ * Unliking a post.
  * @param {ObjectId} userId - The ID of the user who is unliking the post.
  * @param {ObjectId} postId - The ID of the post to unlike.
  * @returns {Object} - The unliked post data.
@@ -53,7 +53,7 @@ export const unlikePost = async (userId, postId) => {
 };
 
 /**
- * Get all likes for a post.
+ * Getting the all likes for a post.
  * @param {ObjectId} postId - The ID of the post to get likes for.
  * @returns {Array} - List of likes.
  */

@@ -13,26 +13,25 @@ import { postRouter } from '../routes/postRoutes.js';
 const app = express();
 const server = createServer(app);
 
-// Middleware
+// Middlewares
 app.use(express.json());
 app.use(cors());
 app.use(compression());
 app.use(helmet());
 app.use(morgan('dev'));
 
-// Health check route
+      //routes.
+// route to check health
 app.get('/health', (req, res) => {
   return res.json({
     success: true,
     message: 'The server is up and running',
   });
 });
-
-// Routes
+//other routes 
 app.use('/api/v1/auth', authRouter);  
 app.use('/api/v1/posts', postRouter);  
-
-// Route not found code
+//if route isnt found 
 app.use('*', (req, res) => {
   throw new NotFoundError(`Route ${req.originalUrl} does not exist on this server`);
 });

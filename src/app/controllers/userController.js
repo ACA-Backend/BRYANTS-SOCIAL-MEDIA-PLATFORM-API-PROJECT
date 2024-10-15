@@ -1,6 +1,6 @@
-import asyncHandler from "../../lib/async-handler.js";
-import * as userService from "../services/user.service.js";
-import { NotFoundError } from "../../lib/error-definitions.js";
+import asyncHandler from "../../lib/asyncHandler.js";
+import * as userService from "../services/userService.js";
+import { NotFoundError } from "../../lib/errorDefinitions.js";
 
 // Fetch user profile by ID
 export const getUserProfile = asyncHandler(async (req, res) => {

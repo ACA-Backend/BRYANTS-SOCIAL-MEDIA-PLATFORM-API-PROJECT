@@ -7,7 +7,7 @@ import {
     ForbiddenError,
     UnauthorizedError,
     ValidationError,
-  } from "../../lib/error-definitions.js";
+  } from "../../lib/errorDefinitions.js";
   
   const errorMiddleware = (err, req, res, next) => {
     // Setting the status code default to 500 for unknown errors

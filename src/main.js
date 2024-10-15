@@ -1,13 +1,13 @@
-import { server } from './bootstrap/server.js';
+import { server } from './boot/server.js';
 import appConfig from './config/appConfig.js';
 import { initializeDatabaseConnection } from './config/dbConfig.js';
 
 (async () => {
   try {
     // Initializing the database connection
-    await initializeDatabaseConnection();
+    initializeDatabaseConnection();
 
-    //code to Start the server
+    //code to start the server
     server.listen(appConfig.port, () => {
       console.log(`Server is running on port ${appConfig.port}`);
     });

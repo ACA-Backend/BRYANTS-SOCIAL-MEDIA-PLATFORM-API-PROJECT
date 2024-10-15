@@ -1,5 +1,5 @@
 import { rateLimit } from 'express-rate-limit';
-import { TooManyRequestsError } from '../../lib/error-definitions.js';
+import { TooManyRequestsError } from '../../lib/errorDefinitions.js';
 
 const rateLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, 

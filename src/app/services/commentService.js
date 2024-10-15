@@ -1,4 +1,4 @@
-import { NotFoundError } from '../../lib/errorDefinItions.js';
+import { NotFoundError } from '../../lib/errorDefinitions.js';
 import { Comment } from '../schema/commentSchema.js'; 
 
 // Create a new comment
@@ -11,14 +11,14 @@ export const createComment = async ({ postId, userId, content }) => {
     return comment;
 };
 
-// Get all comments for a specific post
+// Getting all comments for a post
 export const getCommentsByPostId = async (postId) => {
     const comments = await Comment.find({ post: postId }).populate('user');
     if (!comments) throw new NotFoundError('No comments found for this post');
     return comments;
 };
 
-// Update a comment
+// Updating a comment
 export const updateComment = async (commentId, { content }) => {
     const updatedComment = await Comment.findByIdAndUpdate(
         commentId,
@@ -29,7 +29,7 @@ export const updateComment = async (commentId, { content }) => {
     return updatedComment;
 };
 
-// Delete a comment
+// Deleting a comment
 export const deleteComment = async (commentId) => {
     const deletedComment = await Comment.findByIdAndDelete(commentId);
     if (!deletedComment) throw new NotFoundError('Comment not found');

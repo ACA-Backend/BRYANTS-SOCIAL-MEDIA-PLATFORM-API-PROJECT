@@ -55,7 +55,7 @@ export class BadRequestError extends Error {
     }
   }
 
-  export class ToManyRequestsError extends Error {
+  export class TooManyRequestsError extends Error {
     constructor(message , errors) {
         super(message);
         this.errors = errors;

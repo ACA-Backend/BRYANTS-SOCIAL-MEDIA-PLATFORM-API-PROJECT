@@ -1,5 +1,5 @@
-import { User } from "../schema/user.schema.js"; // Assuming you have a User model defined
-import { NotFoundError, ConflictError } from '../../lib/errorDefinition.js';
+import { User } from "../schema/userSchema.js"; 
+import { NotFoundError, UnauthenticatedError } from '../../lib/errorDefinition.js';
 import { generateToken } from '../providers/jwtProvider.js'; 
 import * as authService from './authService.js'; 
 import argon2 from 'argon2'; 
@@ -70,6 +70,19 @@ export const unfollowUser = async (followerId, followingId) => {
     return userToUnfollow;
 };
 
+export const searchUsers = async( query ) => {
+    return await User.find({
+        $or: [
+            {
+                username: { $regex: query, $options: 'i'}
+            },
+            {
+                email: { $regex: query, $options: 'i'}
+            },
+        ],
+    });
+};
+
 export default {
     authenticateUser,
     registerUser,
@@ -77,5 +90,6 @@ export default {
     updateUser,
     followUser,
     unfollowUser,
+    searchUsers,
 };
 

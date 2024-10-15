@@ -6,7 +6,7 @@ export const CreateCommentRequest = Joi.object({
         'string.base': 'Post ID must be a valid string',
         'any.required': 'Post ID is required'
     }),
-    content: Joi.string().min(1).max(500).required().messages({
+    content: Joi.string().min(1).max(5000).required().messages({
         'string.base': 'Comment content must be a valid string',
         'string.min': 'Comment must be at least 1 character long',
         'string.max': 'Comment must not exceed 500 characters',

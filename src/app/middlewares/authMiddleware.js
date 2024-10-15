@@ -1,6 +1,6 @@
 import { verifyToken } from '../providers/jwtProvider.js';
-import { UnauthenticatedError } from '../../lib/error-definitions.js';
-import { User } from '../schema/user.schema.js';
+import { UnauthenticatedError } from '../../lib/errorDefinitions.js';
+import { User } from '../schema/userSchema.js';
 
 const authMiddleware = async (req, res, next) => {
     const authHeader = req.headers.authorization;

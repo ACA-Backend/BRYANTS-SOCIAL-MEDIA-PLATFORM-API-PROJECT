@@ -1,5 +1,5 @@
 import User from '../schema/userSchema.js';
-import { generateToken } from '../../lib/jwt.js';
+import { generateToken } from '../providers/jwtProvider.js';
 import { BadRequestError, UnauthorizedError } from '../../lib/errorDefinitions.js';
 
 export const signUp = async (req, res, next) => {
