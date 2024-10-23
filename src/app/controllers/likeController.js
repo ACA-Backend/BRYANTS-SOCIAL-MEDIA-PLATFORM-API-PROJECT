@@ -1,4 +1,4 @@
-import asyncHandler from "../../lib/asyncHandler.js"
+import asyncHandler from "../../lib/asyncHandler.js";
 import { NotFoundError, BadRequestError } from "../../lib/errorDefinitions.js";
 import * as likeService from "../services/likeService.js";
 

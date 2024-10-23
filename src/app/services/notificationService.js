@@ -1,4 +1,4 @@
-import { notification } from '../schema/notificationSchema.js'
+import { notification } from '../schema/notificationSchema.js';
 import { NotFoundError } from '../../lib/errorDefinitions.js';
 
 export const createNotification = async (payload) => {

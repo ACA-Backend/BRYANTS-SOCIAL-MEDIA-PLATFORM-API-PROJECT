@@ -1,12 +1,12 @@
-import { verifyToken } from '../providers/jwtProvider.js'
-import { UnauthenticatedError } from '../../lib/errorDefinitions.js';
+import { verifyToken } from '../providers/jwtProvider.js';
+import { UnauthorizedError } from '../../lib/errorDefinitions.js';
 import { User } from '../schema/userSchema.js';
 
 const authMiddleware = async (req, res, next) => {
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        throw new UnauthenticatedError('Invalid or missing token');
+        throw new UnauthorizedError('Invalid or missing token');
     }
 
     const token = authHeader.split(' ')[1];
@@ -16,13 +16,13 @@ const authMiddleware = async (req, res, next) => {
 
         const user = await User.findById(decoded.sub);
         if (!user) {
-            throw new UnauthenticatedError('No user found with this token');
+            throw new UnauthorizedError('No user found with this token');
         }
 
         req.user = user;
         next();
     } catch (error) {
-        throw new UnauthenticatedError('Invalid or missing token');
+        throw new UnauthorizedError('Invalid or missing token');
     }
 };
 

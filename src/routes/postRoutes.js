@@ -1,10 +1,10 @@
-import express from 'express'
+import express from 'express';
 import { createPost, updatePost, deletePost, getPost } from '../app/controllers/postController.js';
 import createPostValidation from '../app/requests/postValidation.js';
 import asyncHandler from '../lib/asyncHandler.js';
-import authMiddleware from '../app/middleware/authMiddleware.js';
+import authMiddleware from '../app/middlewares/authMiddleware.js';
 import validator from '../lib/inputValidator.js';
-import { BadRequestError } from '../lib/errorDefinition.js'; 
+import { BadRequestError } from '../lib/errorDefinitions.js';
 
 const postRouter = express.Router();
 

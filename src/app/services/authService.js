@@ -1,4 +1,4 @@
-import { User } from "../schema/userSchema.js"
+import { User } from "../schema/userSchema.js";
 import { ConflictError } from "../../lib/errorDefinition.js"; 
 
 export const getUserById = async (id) => {

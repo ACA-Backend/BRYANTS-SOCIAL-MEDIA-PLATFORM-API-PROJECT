@@ -1,4 +1,4 @@
-import Joi from 'joi'
+import Joi from 'joi';
 
 const registerRequest = Joi.object({
     username: Joi.string().min(3).required(),

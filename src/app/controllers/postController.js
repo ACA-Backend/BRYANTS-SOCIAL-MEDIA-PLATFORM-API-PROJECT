@@ -1,4 +1,4 @@
-import { Post } from '../schema/postSchema.js'
+import { Post } from '../schema/postSchema.js';
 
 // Creating a new post
 export const createPost = async (req, res, next) => {

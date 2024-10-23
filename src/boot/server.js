@@ -1,4 +1,4 @@
-import express from 'express'
+import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import helmet from 'helmet';
@@ -6,9 +6,10 @@ import morgan from 'morgan';
 import listRoutes from 'express-list-routes';
 import { createServer } from 'http';
 import { NotFoundError } from '../lib/errorDefinitions.js';
-import errorMiddleware from '../app/middleware/errorMiddleware.js';
-import { authRouter } from '../routes/auth.js';
+import errorMiddleware from '../app/middlewares/errorMiddleware.js';
+import  authRouter  from '../routes/authRoute.js';
 import { postRouter } from '../routes/postRoutes.js';
+
 
 const app = express();
 const server = createServer(app);

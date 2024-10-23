@@ -1,4 +1,4 @@
-import Joi from 'joi'
+import Joi from 'joi';
 
 // this is the validation schema for creating a comment
 export const CreateCommentRequest = Joi.object({

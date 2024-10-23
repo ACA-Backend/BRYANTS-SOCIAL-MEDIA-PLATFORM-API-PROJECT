@@ -1,4 +1,4 @@
-import { model, Schema } from 'mongoose'
+import { model, Schema } from 'mongoose';
 import argon from 'argon2';
 
 const UserSchema = new Schema(
@@ -17,13 +17,12 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       validate: {
-        noSpaces(value) {
-            if (/\s/.test(value)) {
-              throw new Error('password should not contain spaces');
-            }
-          }
-        }
+        validator: function (value) {
+          return !/\s/.test(value); 
+      },
+      message: 'Password should not contain spaces',
     },
+   },
     followers: [
       {
         type: Schema.Types.ObjectId,
@@ -57,7 +56,7 @@ UserSchema.pre('save', async function (next) {
   next();
 });
 //code hashing the password before updating it.
-userSchema.pre('findOneAndUpdate', async function (next) {
+UserSchema.pre('findOneAndUpdate', async function (next) {
     const update = this.getUpdate();
     if (update.password) {
         update.password = await argon.hash(update.password);
@@ -66,8 +65,8 @@ userSchema.pre('findOneAndUpdate', async function (next) {
 });
 
 // code used to verify the password 
-userSchema.methods.verifyPassword = async function (password) {
+UserSchema.methods.verifyPassword = async function (password) {
   return await argon.verify(this.password, password);
 };
 
-export const user = model('user', UserSchema);
+export const User = model('User', UserSchema);

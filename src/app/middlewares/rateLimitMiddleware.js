@@ -1,4 +1,4 @@
-import { rateLimit } from 'express-rate-limit'
+import { rateLimit } from 'express-rate-limit';
 import { TooManyRequestsError } from '../../lib/errorDefinitions.js';
 
 const rateLimiter = rateLimit({

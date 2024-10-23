@@ -1,4 +1,4 @@
-import User from '../schema/userSchema.js'
+import {User} from '../schema/userSchema.js';
 import { generateToken } from '../providers/jwtProvider.js';
 import { BadRequestError, UnauthorizedError } from '../../lib/errorDefinitions.js';
 
