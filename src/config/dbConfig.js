@@ -9,7 +9,7 @@ const initializeDatabaseConnection = (env) => {
 
   let mongoUri;
   switch (env) {
-    case "production":
+    case "development":
       mongoUri = MONGO_URI;
       break;
     case "staging":
@@ -23,7 +23,7 @@ const initializeDatabaseConnection = (env) => {
   }
 
   //code to connect to MongoDB with relevant URI
-  mongoose.connect(mongoUri);
+  mongoose.connect (mongoUri);
 
   const db = mongoose.connection;
 
