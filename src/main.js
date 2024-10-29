@@ -5,7 +5,8 @@ import { initializeDatabaseConnection } from './config/dbConfig.js';
 (async () => {
   try {
     // Initializing the database connection
-    initializeDatabaseConnection();
+    const env = process.env.NODE_ENV || 'development';
+    initializeDatabaseConnection(env);
 
     //code to start the server
     server.listen(appConfig.port, () => {

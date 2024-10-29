@@ -23,10 +23,7 @@ const initializeDatabaseConnection = (env) => {
   }
 
   //code to connect to MongoDB with relevant URI
-  mongoose.connect(mongoUri, {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true 
-  });
+  mongoose.connect(mongoUri);
 
   const db = mongoose.connection;
 
