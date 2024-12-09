@@ -2,11 +2,11 @@ import asyncHandler from "../../lib/asyncHandler.js";
 import { BadRequestError, NotFoundError } from "../../lib/errorDefinitions.js";
 import * as commentService from "../services/commentService.js";
 import validator from "../../lib/inputValidator.js";
-import { createCommentRequest } from "../requests/createCommentRequest.js";
+import { CreateCommentRequest } from "../requests/createCommentRequest.js";
 
 // Creating a new comment
 export const createComment = asyncHandler(async (req, res) => {
-    const { errors } = validator(createCommentRequest, req.body);
+    const { errors } = validator(CreateCommentRequest, req.body);
 
     if (errors) {
         throw new BadRequestError("Invalid comment data", errors);
@@ -14,8 +14,8 @@ export const createComment = asyncHandler(async (req, res) => {
 
     const comment = await commentService.createComment({
         content: req.body.content,
-        author: req.user._id, // Assuming req.user is populated via auth middleware
-        post: req.params.postId, // Assuming postId is passed as a route param
+        author: req.user._id, 
+        post: req.params.postId, 
     });
 
     res.status(201).json({

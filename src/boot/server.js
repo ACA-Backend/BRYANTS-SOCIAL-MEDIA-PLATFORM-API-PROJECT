@@ -9,7 +9,7 @@ import { NotFoundError } from '../lib/errorDefinitions.js';
 import errorMiddleware from '../app/middlewares/errorMiddleware.js';
 import  authRouter  from '../routes/authRoute.js';
 import { postRouter } from '../routes/postRoutes.js';
-
+import { commentRouter } from '../routes/commentRoute.js';
 
 const app = express();
 const server = createServer(app);
@@ -32,6 +32,7 @@ app.get('/health', (req, res) => {
 //other routes 
 app.use('/api/v1/auth', authRouter);  
 app.use('/api/v1/posts', postRouter);  
+app.use('/api/v1/post',commentRouter);
 //if route isnt found 
 app.use('*', (req, res) => {
   throw new NotFoundError(`Route ${req.originalUrl} does not exist on this server`);

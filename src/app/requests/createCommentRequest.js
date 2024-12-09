@@ -9,7 +9,7 @@ export const CreateCommentRequest = Joi.object({
     content: Joi.string().min(1).max(5000).required().messages({
         'string.base': 'Comment content must be a valid string',
         'string.min': 'Comment must be at least 1 character long',
-        'string.max': 'Comment must not exceed 500 characters',
+        'string.max': 'Comment must not exceed 5000 characters',
         'any.required': 'Comment content is required'
     })
 });

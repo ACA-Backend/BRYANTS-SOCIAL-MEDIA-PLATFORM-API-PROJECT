@@ -1,7 +1,7 @@
 import { NotFoundError } from '../../lib/errorDefinitions.js';
-import { Comment } from '../schema/commentSchema.js'; 
+import { Comment }  from '../schema/commentSchema.js'; 
 
-// Create a new comment
+// Creating a new comment
 export const createComment = async ({ postId, userId, content }) => {
     const comment = await Comment.create({
         post: postId,

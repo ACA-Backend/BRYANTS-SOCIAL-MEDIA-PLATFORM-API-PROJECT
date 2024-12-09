@@ -1,12 +1,13 @@
 import { server } from './boot/server.js'
 import appConfig from './config/appConfig.js';
 import { initializeDatabaseConnection } from './config/dbConfig.js';
+console.log("current directory:", process.cwd());
 
 (async () => {
   try {
     // Initializing the database connection
     const env = process.env.NODE_ENV || 'development';
-    initializeDatabaseConnection(env);
+   await initializeDatabaseConnection(env);
 
     //code to start the server
     server.listen(appConfig.port, () => {

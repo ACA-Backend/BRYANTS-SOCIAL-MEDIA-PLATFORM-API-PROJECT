@@ -3,7 +3,7 @@ import { generateToken } from '../providers/jwtProvider.js';
 import { BadRequestError, UnauthorizedError } from '../../lib/errorDefinitions.js';
 
 export const signUp = async (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, dateOfBirth } = req.body;
   
   try {
     // code to check if user already exists
@@ -13,7 +13,7 @@ export const signUp = async (req, res, next) => {
     }
 
     // Creating new user
-    const user = new User({ username, email, password });
+    const user = new User({ username, email, password, dateOfBirth });
     await user.save();
 
     // Generating JWT token
@@ -30,11 +30,11 @@ export const signUp = async (req, res, next) => {
 };
 
 export const login = async (req, res, next) => {
-  const { email, password } = req.body;
+  const { username, email, password } = req.body;
   
   try {
     // Finding the user
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ username, email });
     if (!user) {
       throw new UnauthorizedError('Invalid credentials');
     }
